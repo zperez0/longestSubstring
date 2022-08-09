@@ -4,10 +4,6 @@
 // Use a counter to keep track of the length of a substring.
 // Return object.
 
-// ["aabb", "aaaa", "bbab"]
-// ['aabb', 'bbab']
-// ['aabb', 'bbab', "aaaa"]
-
 longestSubstring = (arr) => {
   let maxCount = 0;
   let runCount = 1;
@@ -23,7 +19,7 @@ longestSubstring = (arr) => {
       } else {
         for (let i = 0; i < arg.length; i++) {
           let curr = arg.slice();
-          let next = curr.splice(i, 1); // remove 1 element at current index
+          let next = curr.splice(i, 1); // remove 1 element next to starting index
           permute(curr.slice(), m.concat(next)); // passes a copy of curr, concats next into m -> pushes it into the end of the array -> repeats the loop
         }
       }
